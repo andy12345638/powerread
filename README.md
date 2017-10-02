@@ -37,6 +37,13 @@ rpi3 with DS18B20 & PZEM-004T(V1.0)
 `gcc p2t2m.c -o p2t2m -O3 -lmysqlclient -I/usr/include/mysql/`  
 `./p2t2m`  
 
+5. plot.r
+用於將 mysql server 裡的資料讀出並畫圖。
+`Rscript plot.r`
+
+6. plot.php
+用於把 R 畫出來的圖變成網頁
+
 # mysql
 `sudo apt-get install mysql-server mysql-client`  
   
