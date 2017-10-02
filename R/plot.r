@@ -1,4 +1,5 @@
 #p2t2m.c 2017/09/30 change to c> mysql > r-plot > php
+install.packages("showtext")
 library("showtext")
 library(magrittr)
 library(RMySQL)
