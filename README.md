@@ -48,6 +48,14 @@ rpi3 with DS18B20 & PZEM-004T(V1.0)
 6. plot.php  
 用於把 R 畫出來的圖變成網頁  
 
+7. powerread2.c  
+同 1.powerread，但優化讀取方式，不再使用sleep等待。而是連續讀取7個字符後停止。速度較快。  
+同時加入 checksum 驗證資訊是否正確。  
+
+8. p2t2m2.c
+同 4.p2t2m.c 。演算法更新成 powerread2。不再使用sleep等待。而是連續讀取7個字符後停止。速度較快。  
+同時加入 checksum 驗證資訊是否正確。  
+
 ---
 
 # mysql
