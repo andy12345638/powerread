@@ -1,9 +1,9 @@
 #p2t2m.c 2017/09/30 change to c> mysql > r-plot > php
-install.packages("showtext")
-library("showtext")
+#install.packages("showtext")
+library(showtext)
 library(magrittr)
 library(RMySQL)
-conn <- dbConnect(MySQL(),host="192.168.1.133", dbname = "powermonitor", username="rpi", password="12345678")
+conn <- dbConnect(MySQL(),host="192.168.2.60", dbname = "powermonitor", username="rpi", password="12345678")
   sqldf = dbGetQuery(conn,"select * from powermonitor.power where timestamp > (now() - INTERVAL 72 HOUR) LIMIT 4320;")#3days
   daysqldf = dbGetQuery(conn,"select * from powermonitor.power where  DATE(timestamp) = CURDATE() and hour(timestamp)  BETWEEN '05' AND '20';")#today05~20
   ghost_w1=dbGetQuery(conn,"select round(avg(w1),0) from powermonitor.power where   hour(timestamp)=hour(now()) and minute(timestamp)=minute(now()) group by date_format(timestamp,'%H:%i');")#group w1 by minute
